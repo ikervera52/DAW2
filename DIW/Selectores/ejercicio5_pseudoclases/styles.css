@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+section{
+    background-color: #DFDFDF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5rem;
+}
+
+.types{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+h1{
+    color: #4682B4;
+    border-bottom: 1px solid white;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.UI{
+    width: 60%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+}
+ul li{
+    list-style: none;
+}
+
+input[name="nombre"], input[name="email"], textarea{
+    width: 100%;
+    padding: .2rem;
+    border: 1.5px solid steelblue;
+}
+
+input[name="email"]{
+    margin-top: 1rem;
+}
+
+input[type="submit"]{
+    color: white;
+    padding: .8rem 1.5rem;
+    border: 2px solid white;
+    background-color: steelblue;
+}
+
+input[type="radio"]+label{
+    color:steelblue;
+}
+
+.nth-of-type div:nth-of-type(even){
+    background-color: orange;
+    color: white;
+    font-size: 2em;
+}
+
+.nth-of-type li:nth-of-type(even){
+    background-color: blue;
+    color: white;
+    font-size: 2em;
+}
+
+.nth-of-type div, .nth-of-type li{
+    border: 1px solid black;
+    margin: 6px;
+    padding: 2px;
+}
+
+strong{
+    color: red;
+    font-size: 1.5em;
+}
+
+.nth-child ul li{
+    margin: 6px;
+    padding: 2px;
+}
+.nth-child ul li:nth-child(odd){
+    background-color: green;
+    color: white;
+}
+
+.nth-child ul li:nth-child(even){
+    background-color: red;
+    color: white;
+}
+

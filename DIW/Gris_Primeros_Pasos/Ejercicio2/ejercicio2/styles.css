@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    display:grid;
+    grid-template: 1fr 4fr 1fr / 1fr 2fr 1fr;
+    height: 100vh;
+}
+
+header,footer{
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column-end: span 3;
+    padding: 2rem;
+}
+
+footer{
+    padding: 1rem;
+}
+
+nav,aside{
+    background-color: rgb(210, 210, 210);
+}
+
+nav, aside, main{
+    padding: .5rem;
+}
+
+main{
+    background-color: grey;
+}
+

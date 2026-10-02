@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: rgb(80, 133, 163);
+    margin-top: 2rem;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgb(215, 215, 215);
+}
+
+section>*{
+    padding: 1rem;
+}
+
+.parrafo{
+    border-top: 1px solid white;
+}
+.parrafo::first-letter{
+    font-size:3rem;
+    background-color: white;
+    color: red;
+    margin-right: 0.5rem;
+    float: left;
+}
+
+p::first-line{
+    color: red;
+    font-size: 1.2rem;
+}
