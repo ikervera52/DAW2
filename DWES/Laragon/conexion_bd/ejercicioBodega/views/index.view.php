@@ -11,7 +11,7 @@
 
     <main>
         <form action="index.php" method="GET">
-            <input type="hidden" name="accion" value="anadirBodega">
+            <input type="hidden" name="accion" value="anadirView">
             <input type="submit" value="Añadir Bodega"/>
         </form>
         <table>
@@ -24,18 +24,18 @@
             </tr>
             <?php foreach($bodegas as $bodega) : ?>
                 <tr>
-                    <th><?=$bodega->nombre?></th>
-                    <th><?=$bodega->localizacion?></th>
-                    <th><?=$bodega->telefono?></th>
-                    <th><?=$bodega->email?></th>
-                    <th><a href='index.php?accion=entrar&id= <?=$bodega->id?>'>Entrar</a>
+                    <td><?=$bodega->nombre?></td>
+                    <td><?=$bodega->direccion?></td>
+                    <td><?=$bodega->telefono?></td>
+                    <td><?=$bodega->email?></td>
+                    <td>
+                        <a href='index.php?accion=entrar&id= <?=$bodega->id?>'>Entrar</a>
                         <a href='index.php?accion=borrar&id= <?=$bodega->id?>'>Borrar</a>
-                    </th>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
     </main>
-
-    
+   
 </body>
 </html>
