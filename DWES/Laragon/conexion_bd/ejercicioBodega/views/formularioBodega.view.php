@@ -14,7 +14,7 @@
 
     <form action="index.php" method="GET">
         <label for="">Nombre</label>
-        <input type="text" name="nombre"  value="<?=$bodegaSeleccionada->nombre?>" required>
+        <input type="text" name="nombre" required>
         <br>
 
         <label for="">Direccion</label>
@@ -43,16 +43,16 @@
 
         <label for="">¿Dispone de restaurante?</label>
         <br>
-        <input type="radio" name="restaurante" value="1"> <span>Si</span>
+        <input type="radio" name="restaurante" value="1" required> <span>Si</span>
         <br>
-        <input type="radio" name="restaurante" value="0"> <span>No</span>
+        <input type="radio" name="restaurante" value="0" required> <span>No</span>
         <br>
 
         <label for="">¿Dispone de hotel?</label>
         <br>
-        <input type="radio" name="hotel" value="1" > <span>Si</span>
+        <input type="radio" name="hotel" value="1" required> <span>Si</span>
         <br>
-        <input type="radio" name="hotel" value="0"> <span>No</span>
+        <input type="radio" name="hotel" value="0" required> <span>No</span>
         <br>
         <br>
 

@@ -17,4 +17,24 @@ function getById($db, $data){
     $query->execute($data);
     return $query->fetchAll(PDO::FETCH_OBJ)[0];
 }
+
+function updateById($db, $data){
+    $query = $db->prepare("UPDATE bodegas SET nombre = :nombre, direccion = :direccion, email = :email, telefono = :telefono, personaContacto = :personaContacto, anoFundacion = :anoFundacion, restaurante = :restaurante, hotel = :hotel WHERE id = :id");
+    $query->execute($data);
+}
+
+function deleteBodegaById($db,$data){
+    $query = $db->prepare("DELETE FROM bodegas WHERE id = :id");
+    $query->execute($data);
+}
+
+// FUNCIONES DE VINOS EN BASE DE DATOS
+
+function getVinoByBodegaId($db, $data){
+    $query = $db->prepare("SELECT * FROM vinos WHERE bodegaID = :bodegaID");
+    $query->execute($data);
+
+    return $query->fetchAll(PDO::FETCH_OBJ);
+
+} 
 ?>

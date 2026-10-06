@@ -18,6 +18,11 @@ function recogerGet(){
     ];
 }
 
+function redirect($url){
+    header("Location:" . $url);
+    die();
+}
+
 if(isset($_GET["accion"])){
     switch($_GET["accion"]){
         case "anadirView":
@@ -32,23 +37,26 @@ if(isset($_GET["accion"])){
         case "entrar":
             $id = $_GET["id"];
             $bodegaSeleccionada = getById($db, ["id" => $id]);
-            $restaurante;
-            $hotel;
-            if($bodegaSeleccionada->restaurante == 1){
-                $restaurante = "checked";
-            }
-
-            if($bodegaSeleccionada->hotel == 1){
-                $hotel = "checked";
-            }
+            $vinos = getVinoByBodegaId($db, ["bodegaID" => $id]);
             require "views/infoBodega.view.php";
             die();
         break;
         case "guardarBodega":
             $id = $_GET["id"];
-            updateById($db, recogerGet());
-            require "index.php?accion=entrar&id=" . $id;
+            $datos = array_merge(recogerGet(), ["id" => $id]);
+            $bodegaSeleccionada = getById($db, ["id" => $id]);
+            updateById($db, $datos);
+            redirect("index.php?accion=entrar&id=" . $id);
+        break;
+        case "eliminarBodega":
+            $id = $_GET["id"];
+            deleteBodegaById($db, ["id" => $id]);
+        break;
+        case "entrarAnadirVino":
+            require "views/formularioVino.view.php";
             die();
+
+
         break;
     }
 }
